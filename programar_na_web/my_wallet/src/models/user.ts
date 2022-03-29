@@ -30,7 +30,7 @@ class User {
     updated_at: Date
 
     constructor(name: string, email: string, cpf: string, password: string) {
-        this.id = randomUUID()
+        this.id = randomUUID()  
         this.name = name
         this.email = email
         this.cpf = cpf

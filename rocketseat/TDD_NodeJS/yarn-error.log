@@ -1,0 +1,48 @@
+Arguments: 
+  /home/guilherme/.nvm/versions/node/v17.7.1/bin/node /home/guilherme/.nvm/versions/node/v17.7.1/bin/yarn install --network-timeout=30000
+
+PATH: 
+  /home/guilherme/.nvm/versions/node/v17.7.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  17.7.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/express: ETIMEDOUT
+      at Timeout._onTimeout (/home/guilherme/.nvm/versions/node/v17.7.1/lib/node_modules/yarn/lib/cli.js:141543:19)
+      at listOnTimeout (node:internal/timers:559:17)
+      at processTimers (node:internal/timers:502:7)
+
+npm manifest: 
+  {
+    "name": "tdd_nodejs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.17.3",
+      "pg": "^8.7.3",
+      "sequelize": "^6.17.0"
+    },
+    "devDependencies": {
+      "sequelize-cli": "^6.4.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

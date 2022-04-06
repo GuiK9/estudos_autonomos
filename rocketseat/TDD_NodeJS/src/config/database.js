@@ -4,7 +4,7 @@ module.exports = {
   password: "admin",
   database: "nodeauth",
   dialect: "postgres",
-  operatorsAliases: false,
+  operatorsAliases: 0,
   logging: false,
   define: {
     timestamps: true,

@@ -1,18 +1,18 @@
-import express from "express";
-import routes from './routes'
+const express = require("express")
+const routes = require("./routes")
 
 class AppController {
-    constructor(){
+    constructor() {
         this.express = express()
         this.middlewares()
         this.routes()
     }
 
-    middlewares(){
+    middlewares() {
         this.express.use(express.json())
     }
 
-    routes(){
+    routes() {
         this.express.use(routes)
     }
 

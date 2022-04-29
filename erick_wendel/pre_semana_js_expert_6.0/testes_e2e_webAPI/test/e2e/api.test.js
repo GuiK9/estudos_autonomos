@@ -14,10 +14,14 @@ describe('API E2E Test Suite', () => {
         const response = await superTest(Server)
             .get('/')
         const data = JSON.parse(response.text)
+
         expect(data).toBeInstanceOf(Array)
+
         expect(data.length).toEqual(0)
+
         console.log('text', response.text)
-    })
+    }) 
+
     test('POST /  - should save an item e return ok', async () => {
 
         const response = await superTest(Server)

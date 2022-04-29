@@ -22,9 +22,14 @@ async function handler(request, response) {
 
     
         const body = JSON.parse(await once(request, 'data'))
-        console.log('recebido', body)
+
+        console.log('recebido:', body)
+
         const id = randomUUID()
+        
         Database.set(id, body)
+
+        console.log(Database)
 
         return respondJSON({ ok: 1 }, response)
     }

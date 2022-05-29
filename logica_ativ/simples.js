@@ -1,6 +1,4 @@
-const { toNamespacedPath } = require('node:path/win32')
 const readline = require('readline')
-const { arrayBuffer } = require('stream/consumers')
 
 const client = readline.createInterface({
     input: process.stdin,
@@ -123,48 +121,50 @@ function calc7() {
 
 function calc8(arr) {
 
-    /* function test(x){
-        let tested = []
-        for(let t = 0; t < x.length; t++){
-            tested.push(x[t] < x[t+1])
-            console.log(tested)
-        }
-    } */
-
     let ctrl = 0
 
-    let rep = 0
-
-    for (let i = 0; ctrl == 0; i++) {
+    for (let i = 0; ctrl === 0; i++) {
 
         if (arr[i] > arr[i + 1]) {
+            console.log(arr)
 
             let temp = arr[i]
             arr[i] = arr[i + 1]
             arr[i + 1] = temp
 
-            console.log(arr)
-
-
-        } else if (i == arr.length && ctrl == 0) {
-            i = 0
-
-            //let final = []
             
-            if(rep > 5) {
-                ctrl = 1
+        } else if (i == arr.length && ctrl == 0) {
+
+            i = -1
+
+             let final = () => {
+                let finalTemp = []
+                for (let j = 0; j < arr.length; j++) {
+
+                    let temp = arr[j] < arr[j + 1]
+
+                    finalTemp.push(temp)
+
+                }
+                return finalTemp 
             }
 
-            /* test(arr) */
-            console.log(arr)
-            //console.log(final)
+            let testFinal = Array(arr.length).fill(true, 0, arr.length -1)
+            testFinal.pop()
+            testFinal.push(false)
 
-            rep++
+            let arrfinal = final()
+
+            JSON.stringify(testFinal) === JSON.stringify(arrfinal) ? ctrl = 1 : ctrl = 0
+           
+            if(arrfinal == testFinal) {
+                ctrl = 1
+            }
+            
         }
-
     }
 }
 
-let arr = [10, 3, 5, 2]
+let arr = [10, 9, 8, 7, 6, 5]
 
 calc8(arr)

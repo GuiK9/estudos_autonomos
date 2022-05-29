@@ -1,4 +1,6 @@
+const { toNamespacedPath } = require('node:path/win32')
 const readline = require('readline')
+const { arrayBuffer } = require('stream/consumers')
 
 const client = readline.createInterface({
     input: process.stdin,
@@ -103,7 +105,7 @@ function calc7() {
     })
 
 
-    function questions(num){
+    function questions(num) {
 
         console.log(num)
 
@@ -116,4 +118,53 @@ function calc7() {
 
 }
 
-calc7()
+
+//Faça uma função que recebe um array de qualquer tamanho e ordene seus elementos na ordem crescente. Faça sua função na mão, não invoque nenhum método de sorting. Dica: pesquise sobre bubble sort.
+
+function calc8(arr) {
+
+    /* function test(x){
+        let tested = []
+        for(let t = 0; t < x.length; t++){
+            tested.push(x[t] < x[t+1])
+            console.log(tested)
+        }
+    } */
+
+    let ctrl = 0
+
+    let rep = 0
+
+    for (let i = 0; ctrl == 0; i++) {
+
+        if (arr[i] > arr[i + 1]) {
+
+            let temp = arr[i]
+            arr[i] = arr[i + 1]
+            arr[i + 1] = temp
+
+            console.log(arr)
+
+
+        } else if (i == arr.length && ctrl == 0) {
+            i = 0
+
+            //let final = []
+            
+            if(rep > 5) {
+                ctrl = 1
+            }
+
+            /* test(arr) */
+            console.log(arr)
+            //console.log(final)
+
+            rep++
+        }
+
+    }
+}
+
+let arr = [10, 3, 5, 2]
+
+calc8(arr)

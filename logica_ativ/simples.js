@@ -126,14 +126,13 @@ function calc8(arr) {
     for (let i = 0; ctrl === 0; i++) {
 
         if (arr[i] > arr[i + 1]) {
-            console.log(arr)
 
             let temp = arr[i]
             arr[i] = arr[i + 1]
             arr[i + 1] = temp
 
             
-        } else if (i == arr.length && ctrl == 0) {
+        } else if (ctrl == 0) {
 
             i = -1
 
@@ -162,6 +161,8 @@ function calc8(arr) {
             }
             
         }
+        console.log(arr)
+
     }
 }
 
